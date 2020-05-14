@@ -5,9 +5,21 @@ on: repository_dispatch
 jobs:
   check_event:
     name: Check event payload
-    # if: github.event.action == 'check'
+    if: github.event.action == 'check'
 
     runs-on: ubuntu-latest
+
+    steps:
+    - name: Check event payload
+      shell: bash
+      run: |
+        echo "${{ toJSON(github.event) }}"
+
+  deploy_app:
+    name: Deploy Function ppp
+    if: github.event.action == 'deploy'
+
+    runs-on: windows-latest
 
     steps:
     - name: Check event payload
