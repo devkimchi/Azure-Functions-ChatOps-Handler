@@ -5,7 +5,7 @@ on: repository_dispatch
 jobs:
   check_event:
     name: Check event payload
-    if: github.event.client_payload.action == 'check'
+    # if: github.event.action == 'check'
 
     runs-on: ubuntu-latest
 
