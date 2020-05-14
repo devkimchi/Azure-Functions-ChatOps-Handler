@@ -16,7 +16,7 @@ jobs:
         echo "${{ toJSON(github.event) }}"
 
   deploy_app:
-    name: Deploy Function ppp
+    name: Deploy Function app
     if: github.event.action == 'deploy'
 
     runs-on: windows-latest
